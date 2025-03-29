@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://www.python.org"  # Você pode mudar para qualquer site
+url = "https://www.cnnbrasil.com.br/"  # Você pode mudar para qualquer site
 response = requests.get(url)
 
 if response.status_code == 200:
