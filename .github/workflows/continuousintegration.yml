@@ -1,6 +1,5 @@
 name: CI - WF
 on:
-  push:
   pull_request:
 
 jobs:
