@@ -1,7 +1,6 @@
 name: CI - WF
 on:
-  push:
-  pull_request:
+    pull_request:
 
 jobs:
   build:
