@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-url = "https://corporate.exxonmobil.com/"
+url = "https://docs.github.com/en"
 
 if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
