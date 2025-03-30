@@ -1,6 +1,6 @@
 name: CI - WF
 on:
-  pull_request:
+    pull_request:
 
 jobs:
   build:
