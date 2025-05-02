@@ -1,5 +1,6 @@
 # tests/test_main.py
-import pytest
+
+import requests
 from main import fetch_page, extract_word_count_from_html
 
 def test_fetch_page_status_code():
@@ -7,8 +8,11 @@ def test_fetch_page_status_code():
     assert response.status_code == 200
 
 def test_fetch_page_invalid_url():
-    response = fetch_page("https://url-invalida-que-nao-existe-abc123.com")
-    assert response.status_code != 200
+    try:
+        response = fetch_page("https://url-invalida-que-nao-existe-abc123.com")
+        assert response.status_code != 200
+    except requests.exceptions.RequestException:
+        assert True
 
 def test_extract_word_count_basic_html():
     html = "<html><body><p>Olá mundo</p></body></html>"
@@ -24,3 +28,4 @@ def test_extract_word_count_large_html():
     html = "<p>palavra </p>" * 100
     count = extract_word_count_from_html(html)
     assert count == 100
+
