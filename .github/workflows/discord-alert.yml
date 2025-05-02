@@ -1,0 +1,17 @@
+name: Alerta para Discord
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar alerta para o Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"content": "🚨 Novo push na branch main do repositório tb-devops!"}' \
+            https://discord.com/api/webhooks/1367918978688745493/xyD3rKUiXc-L9vIYPH5q2rh6vJ5nVVbDBlGpjWxPimw7htAqQz_zXRGYA8o7jXKLab0O
